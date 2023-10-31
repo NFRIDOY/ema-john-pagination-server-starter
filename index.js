@@ -26,7 +26,10 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // client.connect(); // Use for Deploy Not for dev
+
+    // const productCollection = client.db('emaJohnDB').collection('products');
+    await client.connect(); // Use for dev Not for Deploy
 
     const productCollection = client.db('emaJohnDB').collection('products');
 
